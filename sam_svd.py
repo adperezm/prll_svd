@@ -34,7 +34,7 @@ X = None
 if rank == 0:
     #Generate the synthetic data only rank 0
     print('Reading/Generating data')
-    X = np.loadtxt("U.txt").reshape(n, m)
+    X = np.loadtxt("data/U.txt").reshape(n, m)
     #X=np.random.rand(n,m)
     tic = time.perf_counter()
 

@@ -107,10 +107,10 @@ elif qoiName=='velocity':   #velocity vector
    U=np.concatenate([ux,uy],axis=0)   
     
 print(bmsq)
-np.savetxt("bmsq.txt", bmsq)
+np.savetxt("data/bmsq.txt", bmsq)
 
 print('shape of U: (nx*ny,nSnap)=',U.shape)    
-a_file = open("U.txt", "w")
+a_file = open("data/U.txt", "w")
 for row in U:
     np.savetxt(a_file, row)
 a_file.close()
@@ -124,14 +124,14 @@ y=db['y']        #y coordinate
 n=nx*ny          #total number of spatial points    
 print(x.shape)
 
-a_file = open("x.txt", "w")
+a_file = open("data/x.txt", "w")
 for row in x:
     np.savetxt(a_file, row)
 a_file.close()
 print(U.shape)
 
 
-a_file = open("y.txt", "w")
+a_file = open("data/y.txt", "w")
 for row in y:
     np.savetxt(a_file, row)
 a_file.close()

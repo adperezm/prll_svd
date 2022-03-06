@@ -79,6 +79,9 @@ def dist_svd_update(U_1t,D_1t,Vt_1t,Xi,n,j):
         U_tp1,D_tp1,Vt_tp1=distributed_svd(Xi,n,1)
         #2 contruct matrices to Do the updating
         V_tilde=scipy.linalg.block_diag(Vt_1t.T,Vt_tp1.T)
+        #if rank==0:
+            #print(Vt_tp1.shape)
+            #print(V_tilde.shape)
         W=np.append(U_1t@np.diag(D_1t),U_tp1@np.diag(D_tp1),axis=1)
         Uw,Dw,Vtw=distributed_svd(W,n,j+1)
         #3 Update
@@ -114,7 +117,7 @@ nxy=nx*ny
 n=nxy*2     #Number of rows in the snapshot matrix
 m=95        #Number of columns in the snapshot matrix
 nparts=size
-
+k=30
 
 #Define the send buffer as none to include in the scatter command
 

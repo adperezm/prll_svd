@@ -30,7 +30,7 @@ class contour2d:
         plt.figure(figsize=self.figsize)
         plt.contourf(self.x,self.y,f_.T,levels=100,cmap=self.cmap)
         if len(self.title)>0:
-           plt.title(self.title) 
+           plt.title(self.title)
         plt.colorbar()
         plt.show()
 #
